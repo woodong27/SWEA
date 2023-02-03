@@ -19,4 +19,4 @@ for x in range(T):
             N=N/11
             e+=1
 
-    print(f'#{x+1} {a} {b} {c} {d} {e}')
+    print(f'#{x+1}',a,b,c,d,e)
