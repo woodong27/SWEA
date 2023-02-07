@@ -9,24 +9,21 @@ for x in range(10):
         if ladder[depth][j]==2:
             start=j
 
-    while True:
-        if ladder[depth-1][start]==1:
-            depth-=1
+    while depth!=0:
+        depth-=1
 
-            if 0<=start-1 and ladder[depth][start-1]==1:
-                while True:
-                    start-=1
-                    if ladder[depth][start-1]!=1:
-                        break
+        if 0<=start-1 and ladder[depth][start-1]==1:
+            while True:
+                start-=1
+                if ladder[depth][start-1]!=1:
+                    break
 
-            elif start+1<100 and ladder[depth][start+1]==1:
-                while True:
-                    start += 1
-                    if start==99 or ladder[depth][start+1]!=1:
-                        break
+        elif start+1<100 and ladder[depth][start+1]==1:
+            while True:
+                start += 1
+                if start==99 or ladder[depth][start+1]!=1:
+                    break
 
-            if depth == 0:
-                ans = start
-                break
+        ans=start
 
     print(f'#{T} {ans}')
