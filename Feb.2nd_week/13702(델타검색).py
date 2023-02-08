@@ -2,7 +2,7 @@ for x in range(10):
     N=int(input())
     lst=[list(map(int,input().split()))for _ in range(N)]
 
-    di=[-1,1,0,0]
+    di=[-1,1,0,0] #방향배열 사용해서 상하좌우를 탐색
     dj=[0,0,-1,1]
 
     sum=0
