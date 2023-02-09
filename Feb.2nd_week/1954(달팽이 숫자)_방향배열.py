@@ -16,9 +16,10 @@ for x in range(T):
     count=1
     i=1 # 행
     j=1 # 열
-    while True:
+    while count<=N**2:
         if snail[i][j]==0:
             snail[i][j]=count
+            print(i, j, ' (i,j)에서의 값 :', snail[i][j])
             if 1<=i+di[d]<=N and 1<=j+dj[d]<=N:
                 i+=di[d]
                 j+=dj[d]
@@ -33,13 +34,11 @@ for x in range(T):
             j+=dj[d]
 
         count+=1
-        if count>N**2:
-            break
-
-    result=[]
-    for i in range(1,N+1):
-        result.append(snail[i][1:N+1])
-
-    print(f'#{x+1}')
-    for i in range(N):
-        print(*result[i])
+    print()
+    # result=[]
+    # for i in range(1,N+1):
+    #     result.append(snail[i][1:N+1])
+    #
+    # print(f'#{x+1}')
+    # for i in range(N):
+    #     print(*result[i])
