@@ -1,6 +1,6 @@
 for _ in range(10):
     T=int(input())
-    lst=[list(input())for x in range(100))
+    lst=[list(input())for x in range(100)]
 
     for i in range(100): #행 배열
         lst[i]=''.join(lst[i])
