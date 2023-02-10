@@ -1,7 +1,18 @@
 T=int(input())
 
 for x in range(T):
-    steel=input()
+    line=input()
+    line=line.replace('()','L')
 
-    count=0
-    print(f'#{x+1} {steel}')
+    ans=0
+    stick=0
+    for i in line:
+        if i=='L':
+            ans+=stick
+        elif i=='(':
+            stick+=1
+        else:
+            stick-=1
+            ans+=1
+
+    print(f'#{x+1} {ans}')
