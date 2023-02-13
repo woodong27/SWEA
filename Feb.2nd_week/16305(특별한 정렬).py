@@ -3,7 +3,6 @@ T=int(input())
 for x in range(T):
     N=int(input())
     lst=list(map(int,input().split()))
-
     for i in range(N):
         if i%2: #인덱스 번호가 홀수일때
             for j in range(i+1,N):

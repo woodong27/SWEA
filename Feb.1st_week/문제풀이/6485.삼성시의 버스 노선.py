@@ -7,8 +7,8 @@ for x in range(T):
         a,b=map(int,input().split())
         A.append(a)
         B.append(b)
+
     P=int(input())
-    cc=0
     for i in range(P):
         c=int(input())
         C.append(c)
