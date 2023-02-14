@@ -1,15 +1,18 @@
-def dfs_stack(graph,start):
+def dfs_stack(graph,start,end):
     visited=[]
     stack=[]
     stack.append(start)
 
     while stack:
         now=stack.pop()
-        if now not in visited:
+        if now==end:
+            return 1
+
+        elif now not in visited:
             visited.append(now)
             stack.extend(graph[now])
 
-    return visited
+    return 0
 
 for x in range(10):
     S,G=0,99
@@ -27,4 +30,4 @@ for x in range(10):
     for i in range(N):
         graph[v1[i]].append(v2[i])
 
-    print(f'#{tc} {1 if G in dfs_stack(graph,S) else 0}')
+    print(f'#{tc} {dfs_stack(graph,S,G)}')
