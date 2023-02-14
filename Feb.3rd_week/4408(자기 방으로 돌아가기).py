@@ -3,20 +3,20 @@ T = int(input())
 for x in range(T):
     N = int(input())
 
-    lst = []
+    lst=[]
     for i in range(N):
-        c, g = map(int, input().split())
-        lst.append(c)
-        lst.append(g)
+        s, g = map(int, input().split())
+        if g<s:
+            s,g=g,s
+        lst.append([s,g])
 
-    stack = []
-    stack.append(lst[0])
-    for i in range(1, N * 2):
+    corrider=[0]*201
 
-        if stack[-1] <= lst[i]:
-            stack.pop()
-            stack.append(lst[i])
-        else:
-            stack.append(lst[i])
+    for i in range(N):
+        start=round(lst[i][0]/2)
+        end=round(lst[i][1]/2)
 
-    print(f'#{x + 1} {len(stack)}')
+        for j in range(start,end+1):
+            corrider[j]+=1
+
+    print(f'#{x+1} {max(corrider)}')
