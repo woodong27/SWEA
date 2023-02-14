@@ -1,3 +1,5 @@
+import math
+
 T = int(input())
 
 for x in range(T):
@@ -13,8 +15,8 @@ for x in range(T):
     corrider=[0]*201
 
     for i in range(N):
-        start=round(lst[i][0]/2)
-        end=round(lst[i][1]/2)
+        start=math.ceil(lst[i][0]/2)
+        end=math.ceil(lst[i][1]/2)
 
         for j in range(start,end+1):
             corrider[j]+=1
