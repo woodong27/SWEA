@@ -1,18 +1,19 @@
 def dfs_stack(graph,start,end):
-    visited=[]
+    visited=[0]*(100)
     stack=[]
     stack.append(start)
 
     while stack:
         now=stack.pop()
         if now==end:
-            return 1
+            visited[now]=1
+            return visited[now]
 
-        elif now not in visited:
-            visited.append(now)
+        elif visited[now]==0:
+            visited[now]=1
             stack.extend(graph[now])
 
-    return 0
+    return visited[end]
 
 for x in range(10):
     S,G=0,99

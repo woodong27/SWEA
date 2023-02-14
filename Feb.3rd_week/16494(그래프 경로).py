@@ -3,7 +3,6 @@ T=int(input())
 def DFS(graph,start_node,end_node,cnt):
     global result
     visited[start_node]=True
-    print('start :',start_node, 'end :',end_node)
     if start_node==end_node:
         result=cnt
 
@@ -20,9 +19,7 @@ for x in range(T):
     S,G=map(int,input().split())
 
     visited=[False]*(V+1)
-    print(graph)
     result,cnt=0,0
     DFS(graph,S,G,cnt)
-    print()
 
-    # print(f'#{x+1} {1 if result>0 else 0}')
+    print(f'#{x+1} {1 if result>0 else 0}')
