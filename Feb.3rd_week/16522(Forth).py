@@ -1,13 +1,13 @@
 T=int(input())
 
 for x in range(T):
-    exp=list(map(str,input().split()))
+    exp=list(input().split())
 
     result=[]
     ans=0
     for i in exp:
         if i.isdigit():
-            result.append(i)
+            result.append(int(i))
         elif i=='.':
             break
         else:
@@ -15,8 +15,8 @@ for x in range(T):
                 ans='error'
                 break
             else:
-                a=int(result.pop())
-                b=int(result.pop())
+                a=result.pop()
+                b=result.pop()
                 if i=='+':
                     result.append(b+a)
                 elif i=='*':
