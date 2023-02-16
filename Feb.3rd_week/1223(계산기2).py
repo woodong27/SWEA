@@ -18,10 +18,5 @@ for x in range(10):
                 elif i=='+' and sym[-1]=='*':
                     stack.append(stack.pop()*stack.pop())
 
-
-
-
-
-
     print(stack)
     # print(f'#{x+1} {}')
