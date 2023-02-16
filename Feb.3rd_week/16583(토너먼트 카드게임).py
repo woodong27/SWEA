@@ -18,15 +18,9 @@ def game(lst):
             return lst[1]
 
     else:
-        if n%2:
-            l1=game(lst[0:n//2+1])
-            l2=game(lst[n//2+1:n])
-            return game([l1,l2])
-
-        else:
-            l1=game(lst[0:n//2])
-            l2=game(lst[n//2:n])
-            return game([l1,l2])
+        l1=game(lst[0:n//2+1])
+        l2=game(lst[n//2+1:n])
+        return game([l1,l2])
 
 for x in range(T):
     N=int(input())
