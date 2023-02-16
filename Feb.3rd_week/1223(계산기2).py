@@ -1,22 +1,32 @@
 for x in range(10):
     N=int(input())
-    eq=list(input())
+    equation=list(input())
 
-    print(eq)
+    postfix=[]
     stack=[]
-    sym=[]
-    for i in eq:
+    for i in equation:
         if i.isdigit():
-            stack.append(int(i))
-
+            postfix.append(int(i))
         else:
-            if not sym:
-                sym.append(i)
-            else:
-                if i=='+' and sym[-1]!='*':
-                    sym.append(i)
-                elif i=='+' and sym[-1]=='*':
-                    stack.append(stack.pop()*stack.pop())
+            if i=='*':
+                while stack and stack[-1]=='*':
+                    postfix.append(stack.pop())
+                stack.append(i)
+            elif i=='+':
+                while stack:
+                    postfix.append(stack.pop())
+                stack.append(i)
 
-    print(stack)
-    # print(f'#{x+1} {}')
+    while stack:
+        postfix.append(stack.pop())
+
+    result=[]
+    for i in postfix:
+        if i=='+':
+            result.append(result.pop()+result.pop())
+        elif i=='*':
+            result.append(result.pop()*result.pop())
+        else:
+            result.append(i)
+
+    print(f'#{x+1} {result[0]}')
