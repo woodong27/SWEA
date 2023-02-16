@@ -7,7 +7,7 @@ for x in range(T):
     tri=[[]for _ in range(N)]
     tri[0].append(1)
 
-    for i in range(1,N): #N=3 -> i=1,2
+    for i in range(1,N):
         tri[i].append(1)
         stack=tri[i-1][:]
         for j in range(1,i):
