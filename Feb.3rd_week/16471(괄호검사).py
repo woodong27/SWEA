@@ -1,27 +1,23 @@
 T=int(input())
 
-for x in range(T):
-    word=list(input())
+for tc in range(T):
+    sentence=list(input())
 
     stack=[]
-    for i in word:
-        if i=='{' or i=='(':
-            stack.append(i)
+    for word in sentence:
+        if word=='{' or word=='(':
+            stack.append(word)
 
-        elif i==')':
+        elif word==')':
             if stack and stack[-1]=='(':
                 stack.pop()
             else:
-                stack.append(i)
+                stack.append(word)
 
-        elif i=='}':
+        elif word=='}':
             if stack and stack[-1]=='{':
                 stack.pop()
             else:
-                stack.append(i)
+                stack.append(word)
 
-    ans=1
-    if len(stack)>0:
-        ans=0
-
-    print(f'#{x+1} {ans}')
+    print(f'#{tc+1} {0 if len(stack)>0 else 1}')
