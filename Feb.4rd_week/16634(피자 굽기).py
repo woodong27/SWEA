@@ -6,9 +6,7 @@ for tc in range(T):
     N,M=map(int,input().split())
     lst=list(map(int,input().split()))
 
-    pizzas=deque([])
-    for idx,cheese in enumerate(lst):
-        pizzas.append((idx+1,cheese))
+    pizzas=deque(list(enumerate(lst)))
 
     oven=deque([])
     for i in range(N):
@@ -22,6 +20,6 @@ for tc in range(T):
         elif pizzas:
             oven.append(pizzas.popleft())
         elif not oven:
-            ans=idx
+            ans=idx+1
 
     print(f'#{tc+1} {ans}')
