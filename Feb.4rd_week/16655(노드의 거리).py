@@ -6,7 +6,6 @@ def bfs(start,goal,graph):
     que=deque([])
     que.append((start,0))
     visited=[]
-    ans=0
     while que:
         node,cnt=que.popleft()
         if node==goal:
@@ -16,7 +15,7 @@ def bfs(start,goal,graph):
             if i in graph[node] and i not in visited:
                 que.append((i,cnt+1))
 
-    return ans
+    return 0
 
 for tc in range(T):
     V,E=map(int,input().split())

@@ -8,7 +8,6 @@ dj=[0,0,-1,1]
 def BFS(i,j,ei,ej):
     que=deque([])
     que.append((i,j,-1))
-    ans=0
     while que:
         ci,cj,cnt=que.popleft()
         visited[ci][cj]=1
@@ -21,7 +20,7 @@ def BFS(i,j,ei,ej):
                 if maze[ni][nj]!='1' and not visited[ni][nj]:
                     que.append((ni,nj,cnt+1))
 
-    return ans
+    return 0
 
 for tc in range(T):
     N=int(input())
