@@ -1,9 +1,10 @@
 from collections import deque
 
-def BFS(start):
+def bfs(start):
+    visited=[]
+    path=[]
     que=deque([])
     que.append((start,0))
-    path=[]
     while que:
         node,cnt=que.popleft()
         if node not in visited:
@@ -31,8 +32,7 @@ for tc in range(1,11):
     for i in range(N//2):
         network[v1[i]].append(v2[i])
 
-    visited=[]
-    result=(BFS(start))
+    result=(bfs(start))
 
     maxcnt=0
     for i in result:

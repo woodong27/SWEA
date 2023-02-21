@@ -3,7 +3,7 @@ from collections import deque
 di=[-1,1,0,0]
 dj=[0,0,-1,1]
 
-def bfs(si,sj,gi,gj,lst):
+def bfs():
     que=deque([])
     que.append((si,sj))
     visited=[[0 for _ in range(16)]for _ in range(16)]
@@ -15,7 +15,7 @@ def bfs(si,sj,gi,gj,lst):
         for k in range(4):
             if 0<=ci+di[k]<16 and 0<=cj+dj[k]<16:
                 ni,nj=ci+di[k],cj+dj[k]
-                if not visited[ni][nj] and lst[ni][nj]!='1':
+                if not visited[ni][nj] and maze[ni][nj]!='1':
                     que.append((ni,nj))
 
     return 0
@@ -31,5 +31,5 @@ for x in range(10):
             if maze[i][j]=='3':
                 gi,gj=i,j
 
-    result=bfs(si,sj,gi,gj,maze)
+    result=bfs()
     print(f'#{tc} {result}')
