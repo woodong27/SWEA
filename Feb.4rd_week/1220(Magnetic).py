@@ -1,13 +1,9 @@
-from pprint import pprint
-
 for tc in range(1,11):
     N=int(input())
     table=[list(map(int,input().split()))for _ in range(N)]
 
-    # pprint(table,indent=1,width=1000)
     #1:N극 자성체->아래로
     #2:S극 자성체->위로
-
     '''
     자성체를 만나면 극성에 따라서 위와 아래로 이동
     이동하며 같은 극성의 자성체를 만나면 지워주고
