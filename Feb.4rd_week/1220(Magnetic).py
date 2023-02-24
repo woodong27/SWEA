@@ -28,7 +28,8 @@ for tc in range(1,11):
                         result+=1
                         break
                     k+=1
-            if table[i][j]==2:
+
+            elif table[i][j]==2:
                 table[i][j]=0
                 while 0<=i-k:
                     if table[i-k][j]==2:
