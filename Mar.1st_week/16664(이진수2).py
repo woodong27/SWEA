@@ -8,14 +8,12 @@ for tc in range(T):
     flag=0
     while num!=1:
         cnt+=1
-        if num*2>1:
-            ans.append(1)
-        elif num*2<1:
-            ans.append(0)
-
         num*=2
         if num>1:
+            ans.append(1)
             num-=1
+        elif num<1:
+            ans.append(0)
 
         if cnt>13:
             flag=1
