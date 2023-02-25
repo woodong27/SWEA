@@ -10,6 +10,7 @@ def calculate(n):
             return a*b
         else:
             return a/b
+        
     return tree[n]
 
 for tc in range(1,11):

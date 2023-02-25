@@ -8,16 +8,16 @@ for tc in range(T):
     flag=0
     while num!=1:
         cnt+=1
+        if cnt>13:
+            flag=1
+            break
+
         num*=2
         if num>1:
             ans.append(1)
             num-=1
         elif num<1:
             ans.append(0)
-
-        if cnt>13:
-            flag=1
-            break
 
     print(f'#{tc+1}',end=' ')
     if flag:
