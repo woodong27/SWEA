@@ -14,25 +14,22 @@ for tc in range(1,11):
     result=0
     for i in range(N):
         for j in range(N):
-            k=1
             if table[i][j]==1:
                 table[i][j]=0
-                while i+k<N:
-                    if table[i+k][j]==1:
-                        table[i+k][j]=0
-                    elif table[i+k][j]==2:
+                for ii in range(i+1,N):
+                    if table[ii][j]==1:
+                        table[ii][j]=0
+                    elif table[ii][j]==2:
                         result+=1
                         break
-                    k+=1
 
             elif table[i][j]==2:
                 table[i][j]=0
-                while 0<=i-k:
-                    if table[i-k][j]==2:
-                        table[i-k][j]=0
-                    if table[i-k][j]==1:
+                for ii in range(i-1,-1,-1):
+                    if table[ii][j]==2:
+                        table[ii][j]=0
+                    elif table[ii][j]==1:
                         result+=1
                         break
-                    k+=1
 
     print(f'#{tc} {result}')
