@@ -8,9 +8,9 @@ for tc in range(10):
     N=int(input()) #트리의 노드의 수
 
     tree=[0]*(N+1)
-    for i in range(N):
+    for i in range(1,N+1):
         lst=list(input().split())
-        tree[i+1]=lst[1]
+        tree[i]=lst[1]
 
     print(f'#{tc+1}',end=' ')
     inorder(1)
