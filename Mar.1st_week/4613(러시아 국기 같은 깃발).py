@@ -5,27 +5,27 @@ for tc in range(T):
     flag=[list(input())for _ in range(N)]
 
     '''
-    i:흰색을 칠할 범위
-    j:파란색을 칠할 범위
+    w:흰색을 칠할 범위
+    b:파란색을 칠할 범위
     i+j+1부터 N까지 나머지 범위에 빨간색을 칠해줌
     '''
     minv=N*M
-    for i in range(0,N-2):
-        for j in range(1,N-1-i):
+    for w in range(0,N-2):
+        for b in range(1,N-1-w):
             cnt=0
-            for ii in range(i+1):
-                for jj in range(M):
-                    if flag[ii][jj]!='W':
+            for i in range(w+1):
+                for j in range(M):
+                    if flag[i][j]!='W':
                         cnt+=1
 
-            for ii in range(i+1,i+j+1):
-                for jj in range(M):
-                    if flag[ii][jj]!='B':
+            for i in range(w+1,w+b+1):
+                for j in range(M):
+                    if flag[i][j]!='B':
                         cnt+=1
 
-            for ii in range(i+j+1,N):
-                for jj in range(M):
-                    if flag[ii][jj]!='R':
+            for i in range(w+b+1,N):
+                for j in range(M):
+                    if flag[i][j]!='R':
                         cnt+=1
 
             if cnt<minv:
