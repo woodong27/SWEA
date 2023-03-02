@@ -7,7 +7,7 @@ for tc in range(T):
     '''
     w:흰색을 칠할 범위
     b:파란색을 칠할 범위
-    i+j+1부터 N까지 나머지 범위에 빨간색을 칠해줌
+    w+b이후부터 N까지 나머지 범위에 빨간색을 칠해줌
     '''
     minv=N*M
     for w in range(0,N-2):
