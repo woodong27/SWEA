@@ -4,6 +4,11 @@ for tc in range(T):
     N,M=map(int,input().split())
     flag=[list(input())for _ in range(N)]
 
+    '''
+    i:흰색을 칠할 범위
+    j:파란색을 칠할 범위
+    i+j+1부터 N까지 나머지 범위에 빨간색을 칠해줌
+    '''
     minv=N*M
     for i in range(0,N-2):
         for j in range(1,N-1-i):
